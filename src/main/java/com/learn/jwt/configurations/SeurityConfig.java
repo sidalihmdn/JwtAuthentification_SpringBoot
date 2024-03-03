@@ -1,6 +1,7 @@
 package com.learn.jwt.configurations;
 
 import com.nimbusds.jose.jwk.source.ImmutableSecret;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.Customizer;
@@ -39,7 +40,8 @@ public class SeurityConfig {
 
     // this is not a secure way to store the key
     // this is just for demonstration purposes
-    String encryptionKey = "Encryption key goes here";
+    @Value("${secret-key}")
+    String encryptionKey;
     @Bean
     public JwtDecoder jwtDecoder(){
         SecretKeySpec secretKeySpec = new SecretKeySpec(

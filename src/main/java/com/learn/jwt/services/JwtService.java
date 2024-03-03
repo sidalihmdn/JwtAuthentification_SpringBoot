@@ -25,7 +25,7 @@ public class JwtService {
                 .subject(auth.getName())
                 .issuer("self")
                 .issuedAt(now)
-                .expiresAt(now.plusSeconds(30))
+                .expiresAt(now.plusSeconds(30)) //30 seconds until expiration - for testing purposes
                 .subject(auth.getName())
                 .build();
         JwtEncoderParameters encoderParameters = JwtEncoderParameters.from(

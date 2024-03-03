@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class ResourceController {
 
     @GetMapping("/public")
-    public String getRoot(){
+    public String getPublic(){
         return "Welcome to a public page page";
     }
 
